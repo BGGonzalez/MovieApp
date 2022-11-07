@@ -1,12 +1,19 @@
 package com.example.mymoviesapp.domain
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.mymoviesapp.models.Movie
 
 class MoviesRepositoryImplement : MoviesRepository {
-    override fun getMovies(): List<Movie> {
-        return listOf(
+
+    private val movies = MutableLiveData<List<Movie>>(
+        mutableListOf(
             Movie("Black Adam", "Action", "2022", "Jaume Collet-Serra", "https://pics.filmaffinity.com/black_adam-333825779-mmed.jpg")
         )
+    )
+
+    override fun getMovies(): LiveData<List<Movie>> {
+        return movies
     }
 
 }
