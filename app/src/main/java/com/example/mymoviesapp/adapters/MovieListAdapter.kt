@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mymoviesapp.R
+import com.example.mymoviesapp.databinding.ActivityMainBinding
 import com.example.mymoviesapp.models.Movie
 
 class MovieListAdapter(private val movies: List<Movie>, private val context: Context)
