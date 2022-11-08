@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mymoviesapp.adapters.MovieListAdapter
 import com.example.mymoviesapp.domain.MoviesRepositoryImplement
 import com.example.mymoviesapp.viewmodels.MoviesViewModel
@@ -19,9 +21,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_movieList)
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
         moviesViewModel.getMovies().observe(this, Observer{ movies->
             println(movies)
-            //recyclerView_movieList.adapter = MovieListAdapter(movies, this)
+            recyclerView.adapter = MovieListAdapter(movies, this)
         })
     }
+
 }

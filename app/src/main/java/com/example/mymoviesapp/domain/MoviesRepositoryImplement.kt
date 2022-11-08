@@ -16,4 +16,10 @@ class MoviesRepositoryImplement : MoviesRepository {
         return movies
     }
 
+    override fun saveMovie(movie: Movie) {
+        /*val data = movie.value?.toMutableList()
+        data?.add(movie)
+        movies.value = data*/
+    }
+
 }

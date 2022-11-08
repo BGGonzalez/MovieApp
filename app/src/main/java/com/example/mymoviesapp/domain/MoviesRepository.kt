@@ -4,4 +4,5 @@ import  com.example.mymoviesapp.models.Movie
 
 interface MoviesRepository {
     fun getMovies() : LiveData<List<Movie>>
+    fun saveMovie(movie: Movie)
 }
