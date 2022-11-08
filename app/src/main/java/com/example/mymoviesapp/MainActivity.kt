@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.mymoviesapp.adapters.MovieListAdapter
 import com.example.mymoviesapp.domain.MoviesRepositoryImplement
 import com.example.mymoviesapp.viewmodels.MoviesViewModel
 import com.example.mymoviesapp.viewmodels.MoviesViewModelFactory
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         moviesViewModel.getMovies().observe(this, Observer{ movies->
             println(movies)
+            //recyclerView_movieList.adapter = MovieListAdapter(movies, this)
         })
     }
 }
